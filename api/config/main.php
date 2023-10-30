@@ -16,8 +16,6 @@ return [
         'request' => [
             'baseUrl' => '/api',
             'csrfParam' => '_csrf-backend',
-            'web' => '/api/web',
-            'adminUrl' => '/api'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -49,7 +47,6 @@ return [
                         'source',
                         'article'
                     ],
-                    '<alias:index|create|confirm|confirmation|update|delete>' => 'api/<alias>',
                 ],
             ],
         ],

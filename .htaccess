@@ -1,14 +1,11 @@
-<IfModule %{HTTP_HOST} != 'api.rbac.uz'>
-Options +FollowSymLinks
-IndexIgnore */*
+<IfModule mod_rewrite.c>
 
-RewriteEngine on
+  RewriteEngine on
 
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^admin/(.*)$ backend/web/$1 [L]
 
-# otherwise forward it to index.php
-RewriteRule . index.php
+  RewriteRule ^api/(.*)$ api/web/$1 [L]
+
+  RewriteRule ^(.*)$ frontend/web/$1 [L]
 
 </IfModule>
