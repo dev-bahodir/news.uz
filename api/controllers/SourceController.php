@@ -21,7 +21,7 @@ class SourceController extends ActiveController
 
         $behaviors['corsFilter'] = [
             'class' => Cors::class,
-            'cors' => [],
+            'cors' => ['*'],
         ];
 
         $behaviors['format'] = [

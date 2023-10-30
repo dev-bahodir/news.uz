@@ -1,11 +1,30 @@
-Options +FollowSymLinks
-IndexIgnore */*
-RewriteEngine on
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+</IfModule>
 
-RewriteRule ^uploads/(.*)$ backend/web/uploads/$1 [L]
-RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
-RewriteRule (.*) /frontend/web/$1
+<IfModule mod_rewrite.c>
+    # deal with admin first
+    RewriteCond %{REQUEST_URI} ^/(api)
+    RewriteRule ^.*$ api/web/index.php [L]
+    RewriteCond %{REQUEST_URI} !index.php
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ api/web/index.php
+</IfModule>
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond . /frontend/web/index.php
+
+
+
+#Options +FollowSymLinks
+#IndexIgnore */*
+#RewriteEngine on
+#
+#RewriteRule ^api/article/(.*)$ api/web/$1 [L]
+#RewriteRule (.*) /frontend/web/$1
+#RewriteRule (.*) /api/web/$1
+#
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond . /frontend/web/index.php
+#RewriteCond . /api/web/index.php

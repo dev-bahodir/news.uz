@@ -10,10 +10,10 @@ class ArticleController extends ActiveController
 {
     public $modelClass = 'api\models\Article';
 
-    /*public $serializer = [
+    public $serializer = [
         'class' => 'yii\rest\Serializer',
         'collectionEnvelope' => 'items',
-    ];*/
+    ];
 
     public function behaviors()
     {
@@ -21,7 +21,7 @@ class ArticleController extends ActiveController
 
         $behaviors['corsFilter'] = [
             'class' => Cors::class,
-            'cors' => [],
+            'cors' => ['*'],
         ];
 
         $behaviors['format'] = [
