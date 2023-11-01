@@ -22,10 +22,7 @@ class ArticleController extends ActiveController
         $behaviors['corsFilter'] = [
             'class' => Cors::class,
             'cors' => [
-                'Origin'                           => "*",
-                'Access-Control-Request-Method'    => ['POST', 'GET'],
-                'Access-Control-Allow-Credentials' => true,
-                'Access-Control-Max-Age'           => 3600,
+                'Origin' => "*"
             ],
         ];
 
