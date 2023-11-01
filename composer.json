@@ -20,7 +20,8 @@
         "yiisoft/yii2-symfonymailer": "~2.0.3",
         "mdmsoft/yii2-admin": "2.x-dev",
         "guzzlehttp/guzzle": "^7.8",
-        "ext-imagick": "*"
+        "ext-imagick": "*",
+        "yiithings/yii2-dotenv": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
