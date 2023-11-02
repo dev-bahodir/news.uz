@@ -58,7 +58,7 @@ return [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=restapi',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=restapi',
             'username' => 'root',
             'password' => 'antifragile',
             'charset' => 'utf8',
