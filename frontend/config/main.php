@@ -1,4 +1,12 @@
 <?php
+$url = getenv('JAWSDB_URL');
+$dbparts = parse_url($url);
+
+$hostname = $dbparts['host'];
+$username = $dbparts['user'];
+$password = $dbparts['pass'];
+$database = ltrim($dbparts['path'],'/');
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -58,9 +66,9 @@ return [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=restapi',
-            'username' => 'root',
-            'password' => 'antifragile',
+            'dsn' => 'mysql:host='.$hostname.';dbname='.$database,
+            'username' => $username,
+            'password' => $password,
             'charset' => 'utf8',
         ],
 
