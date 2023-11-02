@@ -7,3 +7,4 @@ RewriteRule . index.php
 
             # use index.php as index file
 DirectoryIndex index.php
+Require all granted
