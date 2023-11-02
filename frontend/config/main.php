@@ -1,7 +1,7 @@
 <?php
 $url = env('JAWSDB_URL');
 $dbparts = parse_url($url);
-$hostname = $dbparts['host'];
+$hostname = isset($dbparts['host']) ? $dbparts['host'] : "localhost";
 $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'], '/');
