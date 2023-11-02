@@ -21,7 +21,7 @@
         "mdmsoft/yii2-admin": "2.x-dev",
         "guzzlehttp/guzzle": "^7.8",
         "ext-imagick": "*",
-        "yiithings/yii2-dotenv": "*",
+        "yiithings/yii2-dotenv": "^1.1",
       "ext-mysqli": "*"
     },
     "require-dev": {
