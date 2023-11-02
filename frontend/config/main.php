@@ -2,9 +2,9 @@
 $url = env('JAWSDB_URL');
 $dbparts = parse_url($url);
 $hostname = isset($dbparts['host']) ? $dbparts['host'] : "localhost";
-$username = $dbparts['user'];
-$password = $dbparts['pass'];
-$database = ltrim($dbparts['path'], '/');
+$username = isset($dbparts['user']) ? $dbparts['user'] : "root";
+$password = isset($dbparts['pass']) ? $dbparts['pass'] : "antifragile";
+$database = isset($dbparts['path']) ? ltrim($dbparts['path'], '/') : "restapi";
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
