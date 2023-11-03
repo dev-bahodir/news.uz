@@ -70,14 +70,6 @@ return [
             'password' => $password,
             'charset' => 'utf8',
         ],
-
-        /*'db' => [
-            'class' => \yii\db\Connection::class,
-            'dsn' => 'mysql:host=localhost;dbname=restapi',
-            'username' => 'root',
-            'password' => 'antifragile',
-            'charset' => 'utf8',
-        ],*/
     ],
     'params' => $params,
 ];
