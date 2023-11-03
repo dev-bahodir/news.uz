@@ -1,10 +1,10 @@
 <?php
-$url = env('JAWSDB_URL');
+/*$url = env('JAWSDB_URL');
 $dbparts = parse_url($url);
 $hostname = isset($dbparts['host']) ? $dbparts['host'] : "localhost";
 $username = isset($dbparts['user']) ? $dbparts['user'] : "root";
 $password = isset($dbparts['pass']) ? $dbparts['pass'] : "antifragile";
-$database = isset($dbparts['path']) ? ltrim($dbparts['path'], '/') : "restapi";
+$database = isset($dbparts['path']) ? ltrim($dbparts['path'], '/') : "restapi";*/
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
@@ -63,13 +63,13 @@ return [
                 ],
             ],
         ],
-        'db' => [
+        /*'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=' . $hostname . ';dbname=' . $database,
             'username' => $username,
             'password' => $password,
             'charset' => 'utf8',
-        ],
+        ],*/
     ],
     'params' => $params,
 ];
