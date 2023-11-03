@@ -63,11 +63,19 @@ return [
                 ],
             ],
         ],
-        'db' => [
+        /*'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=' . $hostname . ';dbname=' . $database,
             'username' => $username,
             'password' => $password,
+            'charset' => 'utf8',
+        ],*/
+
+        'db' => [
+            'class' => \yii\db\Connection::class,
+            'dsn' => 'mysql:host=localhost;dbname=restapi',
+            'username' => 'root',
+            'password' => 'antifragile',
             'charset' => 'utf8',
         ],
     ],
