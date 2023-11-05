@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%source}}`.
  */
-class m231102_182453_create_source_table extends Migration
+class m231105_103956_create_source_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -22,8 +22,10 @@ class m231102_182453_create_source_table extends Migration
             'source',
             'articleId',
             'article',
-            'articleId'
+            'articleId',
+            'CASCADE'
         );
+
     }
 
     /**
@@ -32,7 +34,6 @@ class m231102_182453_create_source_table extends Migration
     public function safeDown()
     {
         $this->dropTable('{{%source}}');
-
         $this->dropForeignKey(
             'fk-source',
             'source'
